@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retrait de fonds — Simulation pédagogique</title>
+<style>
+  :root {
+    --bg: #0b0e11;
+    --panel: #181a20;
+    --gold: #fcd535;
+    --text: #eaecef;
+    --muted: #848e9c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  .edu-banner {
+    background: #d9342b;
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    border-bottom: 3px solid #8f1f18;
+  }
+  .edu-banner small {
+    display: block;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 1px solid #22262e;
+  }
+  .logo { font-size: 20px; font-weight: 700; color: var(--gold); }
+  main {
+    max-width: 440px;
+    margin: 60px auto;
+    padding: 40px 32px;
+    background: var(--panel);
+    border-radius: 12px;
+  }
+  h1 { font-size: 20px; margin-bottom: 6px; text-align: center; }
+  p.sub { color: var(--muted); margin-bottom: 24px; font-size: 14px; text-align: center; }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #0b0e11;
+    border: 1px solid #22262e;
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14px;
+  }
+  .row { display: flex; gap: 12px; }
+  .row > div { flex: 1; }
+  button {
+    width: 100%;
+    padding: 12px;
+    background: var(--gold);
+    color: #0b0e11;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  button:hover { opacity: 0.9; }
+  .note {
+    margin-top: 20px;
+    padding: 12px;
+    background: #2b2411;
+    border: 1px solid #5c4d16;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--gold);
+  }
+  .error-screen {
+    display: none;
+    text-align: center;
+  }
+  .error-screen .icon { font-size: 48px; margin-bottom: 16px; }
+  .error-screen h2 { color: #f6465d; margin-bottom: 10px; }
+  .error-screen p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<div class="edu-banner">
+  🎓 SIMULATION : un vrai site de phishing enverrait ici le numéro de carte, la date d'expiration et le CVV vers un serveur contrôlé par l'attaquant, puis afficherait une fausse erreur pour détourner les soupçons.
+  <small>Aucune donnée saisie ci-dessous n'est enregistrée ni transmise.</small>
+</div>
+
+<nav>
+  <div class="logo">BitTrade Pro</div>
+  <div style="color: var(--muted); font-size: 13px;">Démo — aucune donnée réelle</div>
+</nav>
+
+<main>
+  <div id="formView">
+    <h1>Confirmez votre carte</h1>
+    <p class="sub">Pour retirer vos fonds, vérifiez votre moyen de paiement</p>
+
+    <form id="cardForm">
+      <label for="cardnum">Numéro de carte</label>
+      <input type="text" id="cardnum" placeholder="0000 0000 0000 0000" required>
+
+      <div class="row">
+        <div>
+          <label for="exp">Expiration</label>
+          <input type="text" id="exp" placeholder="MM/AA" required>
+        </div>
+        <div>
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" required>
+        </div>
+      </div>
+
+      <label for="name">Nom sur la carte</label>
+      <input type="text" id="name" placeholder="NOM Prénom" required>
+
+      <button type="submit">Confirmer et retirer</button>
+    </form>
+
+    <div class="note">
+      ⚠️ Ne saisissez jamais vos vraies informations bancaires ici. Ce formulaire est statique à but pédagogique.
+    </div>
+  </div>
+
+  <div class="error-screen" id="errorView">
+    <div class="icon">⚠️</div>
+    <h2>Échec de la vérification</h2>
+    <p>
+      Votre banque a refusé l'opération.<br>
+      Veuillez réessayer plus tard ou contacter votre service client.
+    </p>
+  </div>
+</main>
+
+<script>
+  // Simulation pédagogique : aucune donnée n'est capturée ni envoyée.
+  // Dans une attaque réelle, ce script ferait un fetch('/api/log', {...})
+  // avec les informations de carte, puis afficherait une fausse erreur
+  // bancaire pour retarder la découverte de la fraude par la victime.
+  document.getElementById('cardForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('errorView').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

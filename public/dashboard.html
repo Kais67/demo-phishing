@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tableau de bord — Simulation pédagogique</title>
+<style>
+  :root {
+    --bg: #0b0e11;
+    --panel: #181a20;
+    --gold: #fcd535;
+    --text: #eaecef;
+    --muted: #848e9c;
+    --green: #0ecb81;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  .edu-banner {
+    background: #d9342b;
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    border-bottom: 3px solid #8f1f18;
+  }
+  .edu-banner small {
+    display: block;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 1px solid #22262e;
+  }
+  .logo { font-size: 20px; font-weight: 700; color: var(--gold); }
+  main {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 40px 32px;
+    background: var(--panel);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .check {
+    width: 56px; height: 56px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+  }
+  h1 { font-size: 22px; margin-bottom: 6px; }
+  .amount { font-size: 32px; font-weight: 700; color: var(--green); margin: 16px 0 24px; }
+  p.sub { color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+  .btn-withdraw {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: var(--gold);
+    color: #0b0e11;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-withdraw:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<div class="edu-banner">
+  🎓 SIMULATION — Étape suivante typique d'une attaque : créer un faux gain pour inciter la victime à "retirer ses fonds", ce qui l'amène à saisir ses coordonnées bancaires.
+  <small>Rien n'a été enregistré à l'étape précédente. Cette page est statique.</small>
+</div>
+
+<nav>
+  <div class="logo">BitTrade Pro</div>
+  <div style="color: var(--muted); font-size: 13px;">Démo — aucune donnée réelle</div>
+</nav>
+
+<main>
+  <div class="check">✓</div>
+  <h1>Félicitations !</h1>
+  <div class="amount">+0,002 BTC</div>
+  <p class="sub">Votre bonus de bienvenue a été crédité sur votre portefeuille</p>
+  <a class="btn-withdraw" href="carte.html">Retirer mes fonds</a>
+</main>
+
+</body>
+</html>

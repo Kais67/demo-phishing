@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BitTrade Pro — Simulation pédagogique</title>
+<style>
+  :root {
+    --bg: #0b0e11;
+    --panel: #181a20;
+    --gold: #fcd535;
+    --text: #eaecef;
+    --muted: #848e9c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  .edu-banner {
+    background: #d9342b;
+    color: #fff;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    border-bottom: 3px solid #8f1f18;
+  }
+  .edu-banner small {
+    display: block;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 1px solid #22262e;
+  }
+  .logo { font-size: 20px; font-weight: 700; color: var(--gold); }
+  main {
+    max-width: 480px;
+    margin: 60px auto;
+    padding: 40px 32px;
+    background: var(--panel);
+    border-radius: 12px;
+    text-align: center;
+  }
+  h1 { font-size: 24px; margin-bottom: 8px; }
+  p.sub { color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+  .btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    color: #1f1f1f;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-google:hover { background: #f1f1f1; }
+  .gicon {
+    width: 18px; height: 18px;
+    display: inline-block;
+    background: conic-gradient(from -45deg, #ea4335 0 25%, #4285f4 0 50%, #34a853 0 75%, #fbbc05 0 100%);
+    border-radius: 50%;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="edu-banner">
+  🎓 SIMULATION — Projet pédagogique de cybersécurité (ISG Sousse)
+  <small>Cette page imite l'apparence d'un site de trading pour illustrer les techniques de phishing. Aucune donnée saisie sur ce site n'est enregistrée, transmise ou stockée.</small>
+</div>
+
+<nav>
+  <div class="logo">BitTrade Pro</div>
+  <div style="color: var(--muted); font-size: 13px;">Démo — ne pas utiliser de vrais identifiants</div>
+</nav>
+
+<main>
+  <h1>Bienvenue sur BitTrade Pro</h1>
+  <p class="sub">Connectez-vous pour accéder à votre portefeuille crypto</p>
+  <a class="btn-google" href="login.html">
+    <span class="gicon"></span>
+    Continuer avec Google
+  </a>
+</main>
+
+<footer>
+  Ceci est une simulation à but éducatif réalisée dans le cadre d'un projet académique.<br>
+  Aucune donnée réelle n'est collectée sur ce site.
+</footer>
+
+</body>
+</html>
